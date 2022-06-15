@@ -25,6 +25,7 @@ public class UserRepository implements GenericCRUDRepository<User, UserCriteria,
 
     private static List<User> load() {
         // TODO: 6/15/2022 load data from file here
+
         return new ArrayList<>();
     }
 
@@ -47,8 +48,10 @@ public class UserRepository implements GenericCRUDRepository<User, UserCriteria,
     }
 
     @Override
-    public Optional<User> findById(Long aLong) {
-        return Optional.empty();
+    public Optional<User> findById(Long id) {
+        return users.stream()
+                .filter(user -> user.getId().equals(id))
+                .findFirst();
     }
 
     @Override

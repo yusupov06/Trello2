@@ -33,6 +33,9 @@ public class UI {
         main(args);
     }
 
+    /**
+     * UI method for getting user list
+     */
     private static void userList() {
         ResponseEntity<Data<List<UserVO>>> responseData = userService.findAll(new UserCriteria());
         Data<List<UserVO>> data = responseData.getData();
@@ -43,6 +46,9 @@ public class UI {
         }
     }
 
+    /**
+     * UI method for creating user
+     */
     private static void userCreate() {
         UserCreateVO.UserCreateVOBuilder builder = UserCreateVO.builder();
         builder.userName(Reader.readLine("Username : "));

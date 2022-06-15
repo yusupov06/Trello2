@@ -21,9 +21,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-
+/**
+ *
+ */
 public class UserService extends AbstractRepository<UserRepository, BaseMapper> implements
         GenericCRUDService<UserVO, UserCreateVO, UserUpdateVO, UserCriteria, Long> {
+
 
     private static UserService instance;
 

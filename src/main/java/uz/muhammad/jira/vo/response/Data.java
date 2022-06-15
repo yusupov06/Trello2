@@ -27,6 +27,7 @@ public class Data<T> {
     public Data(T body, Integer total) {
         this.body = body;
         this.total = total;
+        this.success = true;
     }
 
     public Data(ErrorVO error) {

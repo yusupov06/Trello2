@@ -16,9 +16,18 @@ import java.io.Serializable;
  */
 
 /**
+ * This interface is the generic of all CRUDService classes
+ *
  * @param <CVO> -> Value Object to persist new entity
  * @param <UVO> -> Update Value Object to update existing entity
  * @param <ID>  -> Id(Primary Key of Entity)
+ * @param <VO> -> Value Object
+ * @param <C> -> Criteria
+ * @see GenericService
+ * @see GenericVO
+ * @see BaseVO
+ * @see GenericCriteria
+ *
  */
 public interface GenericCRUDService<
         VO extends GenericVO,
@@ -26,10 +35,29 @@ public interface GenericCRUDService<
         UVO extends GenericVO,
         C extends GenericCriteria,
         ID extends Serializable> extends GenericService<VO, C, ID> {
+
+
+    /**
+     *
+     * @param dto -> Value Object to persist new entity
+     * @return It returns responce, ID os entity
+     */
     ResponseEntity<Data<ID>> create(@NonNull CVO dto);
 
+
+    /**
+     *
+     * @param id ID of entity
+     * @return it returns nothing just delete the entity who in this ID
+     */
     ResponseEntity<Data<Void>> delete(@NonNull ID id);
 
+    /**
+     *
+     * @param dto -> Value Object to persist new entity
+     * @return ->
+    it returns nothing just update this entity (dto)
+     */
     ResponseEntity<Data<Void>> update(@NonNull UVO dto);
 
 }
