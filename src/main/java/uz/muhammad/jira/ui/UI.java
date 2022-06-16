@@ -14,11 +14,7 @@ import uz.muhammad.jira.vo.response.ResponseEntity;
 import java.util.List;
 import java.util.Scanner;
 
-/**
- * @author "Elmurodov Javohir"
- * @since 14/06/22/15:44 (Tuesday)
- * jira/IntelliJ IDEA
- */
+
 public class UI {
 
     private final static UserService userService = ApplicationContextHolder.getBean(UserService.class);
