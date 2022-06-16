@@ -4,7 +4,11 @@ import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import uz.muhammad.jira.criteria.UserCriteria;
 import uz.muhammad.jira.domains.auth.User;
+import uz.muhammad.jira.mappers.BaseMapper;
+import uz.muhammad.jira.mappers.UserMapper;
+import uz.muhammad.jira.repository.AbstractRepository;
 import uz.muhammad.jira.repository.GenericCRUDRepository;
+import uz.muhammad.jira.repository.Repository;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -16,11 +20,13 @@ import java.util.Optional;
  * @since 14/06/22/14:45 (Tuesday)
  * jira/IntelliJ IDEA
  */
+
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class UserRepository implements GenericCRUDRepository<User, UserCriteria, Long> {
 
     private static UserRepository instance;
     private static final List<User> users = load();
+
 
 
     private static List<User> load() {

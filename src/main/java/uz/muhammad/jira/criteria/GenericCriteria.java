@@ -7,3 +7,4 @@ package uz.muhammad.jira.criteria;
  */
 public class GenericCriteria {
 }
+

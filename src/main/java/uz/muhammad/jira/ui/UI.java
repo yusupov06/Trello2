@@ -14,7 +14,6 @@ import uz.muhammad.jira.vo.response.ResponseEntity;
 import java.util.List;
 import java.util.Scanner;
 
-
 public class UI {
 
     private final static UserService userService = ApplicationContextHolder.getBean(UserService.class);
@@ -42,20 +41,23 @@ public class UI {
         }
     }
 
+
     /**
      * UI method for creating user
      */
     private static void userCreate() {
-        System.out.println("hello");
+
         UserCreateVO.UserCreateVOBuilder builder = UserCreateVO.builder();
         builder.userName(Reader.readLine("Username : "));
         builder.password(Reader.readLine("Password : "));
         UserCreateVO userCreateVO = builder.build();
+
         ResponseEntity<Data<Long>> responseData = userService.create(userCreateVO);
         if (responseData.getData().isSuccess()) {
             Writer.println(responseData.getData(), Color.GREEN);
         } else {
             Writer.println(responseData.getData().getError(), Color.RED);
         }
+
     }
 }
