@@ -46,6 +46,7 @@ public class UI {
      * UI method for creating user
      */
     private static void userCreate() {
+        System.out.println("hello");
         UserCreateVO.UserCreateVOBuilder builder = UserCreateVO.builder();
         builder.userName(Reader.readLine("Username : "));
         builder.password(Reader.readLine("Password : "));
